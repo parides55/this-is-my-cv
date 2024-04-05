@@ -222,41 +222,11 @@
 
     </footer>
 
-    <script>
-        let map;
-
-        async function initMap() {
-            const { Map } = await google.maps.importLibrary("maps");
-
-            map = new Map(document.getElementById("map"), {
-                center: { lat: -34.397, lng: 150.644 },
-                zoom: 8,
-            });
-
-        var labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
-        var locations = [
-        {lat: 40.785091, lng: -73.968285},
-        {lat: 41.768731, lng: -73.964915},
-        {lat: 40.765086, lng: -73.981420}
-        ];
-
-        var markers = locations.map(function(location, i) {
-            return new google.maps.Marker({
-                position: location,
-                label: labels[i % labels.length]
-            });
-        });
-
-        var markerCluster = new MarkerClusterer(map, markers,
-            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
-            
-    }
-    </script>
-
-    <script async
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmpOmmrXLR_PRoLqr2m2mMhuR6W5iFvt4&loading=async&callback=initMap">
-        </script>
+    <script src="/assets/js/map.js"></script>
+    <script
+        src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmpOmmrXLR_PRoLqr2m2mMhuR6W5iFvt4&loading=async&callback=initMap"></script>
 
 </body>
 
